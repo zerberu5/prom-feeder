@@ -14,8 +14,9 @@ scrape_configs:
       - targets:
           - localhost
         labels:
-          job: docker
-          __path__: /var/log/docker/containers/*/*.log
+          job: prometheus-feeder-label1
+          container_name: "prometheus-feeder"
+          __path__: /var/log/docker/containers/d029f4797ad652734c47e72bd23894d3efbe9f570aeaa58987eead3766fe1586/*.log
     pipeline_stages:
       - json:
           expressions:
